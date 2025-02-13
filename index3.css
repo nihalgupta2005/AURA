@@ -1,0 +1,223 @@
+/* Color Palette */
+:root {
+    --first-color: #ff895d;
+    --second-color: #d5eeff;
+    --third-color: #78bbe6;
+    --fourth-color: #1b435d;
+
+    --text-color: #8f8787;
+    --text-hover: #6f6f6f;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, var(--first-color), var(--second-color));
+    color: var(--text-color);
+    transition: background 0.5s, color 0.5s;
+}
+.aura {
+    display: inline-block;
+    position: relative;
+    left: 520px;
+}
+
+h2:hover {
+    background-color: cornflowerblue;
+    color: wheat;
+}
+a {
+    color: #796666; /* Changes text color */
+    text-decoration: none; /* Removes underline */
+    font-size: 1.2rem; /* Adjusts font size */
+    font-weight: bold; /* Makes the text bold */
+    transition: color 0.3s ease-in-out; /* Smooth transition when color changes */
+    position: relative;
+    left: 290px;
+    top: 30px;
+}
+body:hover {
+    background: linear-gradient(135deg, var(--second-color), var(--first-color));
+    color: var(--text-hover);
+}
+
+/* Header */
+header {
+    background: var(--third-color);
+    padding: 20px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: var(--text-color);
+    transition: background 0.3s, box-shadow 0.3s, transform 0.3s;
+}
+
+header:hover {
+    background: var(--fourth-color);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    transform: translateY(-5px);
+}
+
+/* Features Section */
+.features-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.feature-card {
+    background: var(--second-color);
+    border: 2px solid var(--third-color);
+    border-radius: 15px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.feature-card:hover {
+    transform: scale(1.1) rotate(1deg);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    background: var(--first-color);
+}
+
+.feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: var(--third-color);
+    transition: color 0.3s;
+}
+
+.feature-card h3:hover {
+    color: var(--fourth-color);
+}
+
+.feature-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+.feature-card p:hover {
+    color: var(--text-hover);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--fourth-color);
+    color: var(--text-color);
+    transition: background 0.3s, color 0.3s;
+}
+
+footer:hover {
+    background: var(--third-color);
+    color: var(--text-hover);
+}
+
+/* Real-Time Updates Section */
+.real-time-updates {
+    background: var(--second-color);
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    border: 2px solid var(--third-color);
+    transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+}
+
+.real-time-updates:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    background: var(--first-color);
+}
+
+.real-time-updates h2 {
+    color: var(--third-color);
+    transition: color 0.3s;
+}
+
+.real-time-updates h2:hover {
+    color: var(--fourth-color);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+header,
+.feature-card,
+footer,
+.real-time-updates {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Media Queries */
+
+/* Small Devices (Phones, <600px) */
+@media (max-width: 600px) {
+    header {
+        font-size: 1.5rem;
+        padding: 15px;
+    }
+
+    .feature-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .features-section {
+        padding: 20px;
+        gap: 10px;
+    }
+
+    .real-time-updates {
+        width: 95%;
+    }
+}
+
+/* Medium Devices (Tablets, 600px to 992px) */
+@media (min-width: 600px) and (max-width: 992px) {
+    header {
+        font-size: 1.8rem;
+    }
+
+    .feature-card {
+        width: 45%;
+    }
+
+    .real-time-updates {
+        width: 85%;
+    }
+}
+
+/* Large Devices (Desktops, >992px) */
+@media (min-width: 992px) {
+    .features-section {
+        gap: 30px;
+    }
+
+    .feature-card {
+        width: 300px;
+    }
+
+    .real-time-updates {
+        width: 80%;
+    }
+}
